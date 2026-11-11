@@ -269,6 +269,7 @@ a{color:inherit}
 .kpi__ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto}.kpi b{display:block;font-size:24px;line-height:1.1;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.kpi span{font-size:12.5px;color:var(--muted)}
 .ic-blue{background:var(--blueSoft);color:var(--blue)}.ic-slate{background:var(--slateSoft);color:var(--slate)}.ic-amber{background:var(--amberSoft);color:var(--amber)}.ic-green{background:var(--greenSoft);color:var(--green)}.ic-red{background:var(--redSoft);color:var(--red)}
 .alert{border-radius:14px;padding:16px 18px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+.alert[data-autohide]{overflow:hidden;transition:opacity .5s ease,max-height .5s ease .3s,margin .5s ease .3s,padding .5s ease .3s;max-height:200px}.alert.is-hiding{opacity:0;max-height:0;margin-bottom:0;padding-top:0;padding-bottom:0;border-width:0}
 .alert--red{background:var(--redSoft);border:1px solid var(--redLine)}.alert--green{background:var(--greenSoft);border:1px solid #bbf7d0;align-items:center}
 .alert__body{flex:1;min-width:0}.alert h2{font-size:14.5px;margin:0 0 2px}.alert p{margin:0;color:var(--ink2);font-size:13px}
 .ipchips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.ipchip{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#7f1d1d}.ipchips .ipchip--bot code{background:#7f1d1d;color:#fff;border-color:#7f1d1d}.ipchip:hover code{border-color:var(--red)}
@@ -364,6 +365,7 @@ async function admin(context) {
 <div class="credit"><img src="${BRAND_LOGO}" alt="" width="28" height="28">CrioScience <em>· Aplicações web</em></div>
 </main>
 <script>
+document.querySelectorAll("[data-autohide]").forEach(function(a){setTimeout(function(){a.classList.add("is-hiding");setTimeout(function(){a.remove()},900)},Number(a.getAttribute("data-autohide"))||5000)});
 document.querySelectorAll("[data-autosubmit]").forEach(function(s){s.addEventListener("change",function(){s.form.submit()})});
 document.querySelectorAll("tr[data-href]").forEach(function(r){r.addEventListener("click",function(e){if(e.target.closest("a"))return;location.href=r.getAttribute("data-href")})});
 document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.getAttribute("data-copy");var done=function(){var l=b.querySelector("span");var o=l.textContent;l.textContent="Copiado!";setTimeout(function(){l.textContent=o},1800)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){})}else{var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove();done()}});
@@ -447,7 +449,7 @@ async function summaryView(env, state, link) {
         <p>${[bots.length ? `<b>${bots.length} ${bots.length === 1 ? "robô clicou" : "robôs clicaram"} no anúncio</b> (servidor que não é do Google).` : "", people.length ? `${people.length} ${people.length === 1 ? "pessoa clicou" : "pessoas clicaram"} 3 ou mais vezes no anúncio, ou 2 ou mais sem chamar no WhatsApp nem ligar.` : ""].filter(Boolean).join(" ")} Copie e cole em Google Ads → Campanha → Configurações → Exclusões de IP.</p>
         <div class="ipchips">${sus.map((r) => `<a class="ipchip${botClicker(r) ? " ipchip--bot" : ""}" href="${esc(link({ ip: r.ip }))}" title="${esc(r.org || "")}">${botClicker(r) ? icon("server", 12) : ""}<code>${esc(r.ip)}</code></a>`).join("")}</div></div>
         <button class="btn btn--primary" type="button" data-copy="${esc(sus.map((r) => r.ip).join("\n"))}">${icon("copy", 16)}<span>Copiar IPs</span></button></section>`
-    : `<section class="alert alert--green"><span class="kpi__ic ic-green">${icon("shield", 20)}</span><div class="alert__body"><h2>Nenhum IP suspeito no período</h2><p>Nenhum robô clicou no anúncio e nenhum visitante clicou repetidamente sem entrar em contato.</p></div></section>`;
+    : `<section class="alert alert--green" data-autohide="5000"><span class="kpi__ic ic-green">${icon("shield", 20)}</span><div class="alert__body"><h2>Nenhum IP suspeito no período</h2><p>Nenhum robô clicou no anúncio e nenhum visitante clicou repetidamente sem entrar em contato.</p></div></section>`;
 
   const body = rows.length
     ? `<div class="tablewrap"><table><thead><tr><th>Visitante</th><th>Local</th><th>Operadora</th><th class="n">Páginas</th><th class="n">Anúncio</th><th class="n">Contatos</th><th>Última visita</th><th>Sites</th></tr></thead><tbody>
