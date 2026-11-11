@@ -1,0 +1,16 @@
+INSTRUÇÕES DE UPLOAD - DENTALLI HOME
+
+1. Esta pasta contém os arquivos HTML/CSS/JS otimizados para produção.
+2. Antes de subir no Cloudflare Pages, copie para dentro desta pasta a pasta original:
+   assets/
+3. A estrutura final precisa ficar assim:
+
+index.html
+robots.txt
+sitemap.xml
+css/style.min.css
+js/script.min.js
+assets/img/...
+assets/video/...
+
+4. No Cloudflare Pages, envie o CONTEÚDO desta pasta, não uma pasta vazia por fora.
