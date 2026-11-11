@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/*.css", "/*.js", "/*.mjs", "/*.map",
+    "/*.webp", "/*.avif", "/*.png", "/*.jpg", "/*.jpeg", "/*.gif", "/*.svg", "/*.ico",
+    "/*.mp4", "/*.webm", "/*.woff", "/*.woff2", "/*.ttf",
+    "/*.txt", "/*.xml", "/*.pdf", "/*.json"
+  ]
+}
