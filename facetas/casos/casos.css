@@ -1,0 +1,151 @@
+/* ==========================================================
+   Facetas: casos reais do Dr. Carlos
+   - carrossel de casos no card do topo
+   - galeria de antes e depois com ampliação
+   - vídeos curtos em loop (sem som)
+   Usa as variáveis de cor da própria página (--primary, --ink...).
+   ========================================================== */
+
+/* ---------- Carrossel no card do topo ---------- */
+.caseSlider {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 5; border-radius: 20px;
+  background: #0c121a; isolation: isolate;
+}
+.caseSlider__track { position: absolute; inset: 0; }
+.caseSlide {
+  position: absolute; inset: 0; margin: 0; opacity: 0; transform: scale(1.04);
+  transition: opacity .8s ease, transform 5.5s ease-out;
+}
+.caseSlide.is-active { opacity: 1; transform: scale(1); }
+.caseSlide img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.caseSlider::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(12, 18, 26, .45) 0%, rgba(12, 18, 26, 0) 22%, rgba(12, 18, 26, 0) 70%, rgba(12, 18, 26, .35) 100%);
+}
+.caseSlider__tag {
+  position: absolute; top: 14px; left: 14px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px 6px 10px;
+  border-radius: 999px; background: rgba(12, 18, 26, .62); backdrop-filter: blur(6px);
+  color: #fff; font-size: 13px; font-weight: 500; letter-spacing: .01em;
+}
+.caseSlider__tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #25d366; box-shadow: 0 0 0 3px rgba(37, 211, 102, .25); }
+.caseSlider__dots { position: absolute; left: 50%; bottom: 74px; transform: translateX(-50%); z-index: 2; display: flex; gap: 6px; padding: 6px 9px; border-radius: 999px; background: rgba(12, 18, 26, .45); backdrop-filter: blur(6px); }
+.caseSlider__dots button {
+  width: 7px; height: 7px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 255, 255, .55); transition: width .3s ease, background .3s ease;
+}
+.caseSlider__dots button.is-active { width: 22px; background: #fff; }
+.caseBadge {
+  position: absolute; left: 12px; z-index: 2; padding: 3px 9px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  background: rgba(12, 18, 26, .62); color: #fff; backdrop-filter: blur(4px); pointer-events: none;
+}
+.caseBadge--before { top: 54px; }
+.caseBadge--after { top: calc(50% + 10px); background: rgba(37, 211, 102, .92); color: #06210f; }
+
+.caseBadge--hl { top: 54px; left: 12px; }
+.caseBadge--hr { top: 54px; left: calc(50% + 10px); }
+
+/* ---------- Galeria de casos ---------- */
+.casesSec { background: var(--bg); }
+.caseGrid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+}
+.caseItem { position: relative; margin: 0; }
+.caseItem button {
+  display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; background: #0c121a; font: inherit;
+  border-radius: 16px; overflow: hidden; position: relative;
+}
+.caseItem img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .5s ease, filter .3s ease; }
+.caseItem--sq img { aspect-ratio: 1 / 1; }
+.caseItem--fit img { object-fit: contain; }
+.caseItem button:hover img { transform: scale(1.04); }
+.caseItem button::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(12, 18, 26, 0) 60%, rgba(12, 18, 26, .45) 100%);
+}
+.caseItem .caseBadge--before { top: 10px; left: 10px; }
+.caseItem .caseBadge--after { top: calc(50% + 8px); left: 10px; }
+.caseItem .caseBadge--hl { top: 10px; left: 10px; }
+.caseItem .caseBadge--hr { top: 10px; left: calc(50% + 8px); }
+.casesMore { display: flex; justify-content: center; margin-top: 16px; }
+.caseGrid:not(.is-expanded) .caseItem--more { display: none; }
+@media (min-width: 960px) {
+  .caseGrid:not(.is-expanded) .caseItem--more { display: block; }
+  .casesMore { display: none; }
+}
+.caseItem__zoom {
+  position: absolute; right: 10px; bottom: 10px; z-index: 2; width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(255, 255, 255, .9); color: var(--ink);
+  box-shadow: 0 4px 12px rgba(12, 18, 26, .2); pointer-events: none;
+}
+.caseItem__zoom svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.casesCta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px; text-align: center; }
+.casesCta small { color: var(--muted); font-size: 13.5px; }
+
+/* ---------- Vídeos ---------- */
+.videoSec { background: #0c121a; color: #fff; overflow: hidden; }
+.videoSec .eyebrow { color: #7fb8f5; }
+.videoSec .h2 { color: #fff; }
+.videoSec .lead { color: #b9c3cf; }
+.reel {
+  list-style: none; margin: 0 -20px; padding: 4px 20px 8px;
+  display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.reel::-webkit-scrollbar { display: none; }
+.reel__item { scroll-snap-align: center; }
+.reel__card {
+  position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 0; cursor: pointer; font: inherit;
+  border-radius: 20px; overflow: hidden; background: #111a24;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .06);
+}
+.reel__card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel__card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(12, 18, 26, 0) 65%, rgba(12, 18, 26, .55) 100%);
+}
+.reel__label {
+  position: absolute; left: 12px; bottom: 12px; z-index: 2; color: #fff; font-size: 13.5px; font-weight: 500; text-align: left;
+}
+.reel__play {
+  position: absolute; right: 10px; bottom: 10px; z-index: 2; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(255, 255, 255, .92); color: #0c121a; transition: opacity .2s ease;
+}
+.reel__play svg { width: 14px; height: 14px; fill: currentColor; }
+.reel__card.is-playing .reel__play { opacity: 0; }
+.videoCta { display: flex; justify-content: center; margin-top: 28px; }
+
+/* ---------- Ampliação (lightbox) ---------- */
+.caseLb {
+  position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 18, .92); padding: 56px 12px 24px;
+}
+.caseLb.is-open { display: flex; }
+.caseLb img { max-width: min(100%, 980px); max-height: 100%; object-fit: contain; border-radius: 12px; }
+.caseLb button {
+  position: absolute; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 0; cursor: pointer; background: rgba(255, 255, 255, .14); color: #fff;
+}
+.caseLb button:hover { background: rgba(255, 255, 255, .24); }
+.caseLb svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.caseLb__close { top: 10px; right: 10px; }
+.caseLb__prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.caseLb__next { right: 10px; top: 50%; transform: translateY(-50%); }
+.caseLb__count { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: #c9d2de; font-size: 14px; }
+body.caseLb-open { overflow: hidden; }
+
+@media (min-width: 600px) {
+  .caseGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .reel { grid-auto-columns: 38%; }
+}
+@media (min-width: 960px) {
+  .caseGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .reel { margin: 0; padding: 4px 0 8px; grid-auto-columns: calc((100% - 5 * 14px) / 6); gap: 14px; overflow: visible; }
+  .caseLb__prev { left: 24px; }
+  .caseLb__next { right: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .caseSlide, .caseItem img { transition: none; transform: none; }
+}

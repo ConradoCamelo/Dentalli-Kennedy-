@@ -142,6 +142,9 @@ const WA_MESSAGES = {
   wppFinalFacetas: "Olá! Vim pela página de facetas da Dentalli e quero agendar uma avaliação.",
   wppFlutuanteFacetas: "Olá! Vim pela página de facetas da Dentalli e quero agendar uma avaliação.",
   wppBarraFacetas: "Olá! Vim pela página de facetas da Dentalli e quero agendar uma avaliação.",
+  // Facetas: casos reais e vídeos
+  wppCasosFacetas: "Olá! Vi os casos de facetas do Dr. Carlos no site e quero avaliar o meu sorriso.",
+  wppVideosFacetas: "Olá! Vi os vídeos de facetas no site e quero saber se é indicado para mim.",
 
   default: "Olá! Vim pelo site da Dentalli e quero atendimento."
 };
