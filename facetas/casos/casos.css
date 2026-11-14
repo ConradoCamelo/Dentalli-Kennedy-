@@ -167,7 +167,7 @@ body.caseLb-open { overflow: hidden; }
 }
 @media (min-width: 960px) {
   .caseGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .reel { margin: 0; padding: 4px 0 8px; grid-auto-columns: calc((100% - 4 * 14px) / 5); gap: 14px; overflow: visible; }
+  .reel { margin: 0; padding: 4px 0 8px; grid-auto-columns: calc((100% - 5 * 14px) / 6); gap: 14px; overflow: visible; }
   .caseLb__prev { left: 24px; }
   .caseLb__next { right: 24px; }
 }
@@ -176,9 +176,10 @@ body.caseLb-open { overflow: hidden; }
 }
 
 /* ---------- Minicard do dentista sobre a foto (mesmo modelo da página de implantes) ---------- */
-.photo.has-proCard { position: relative; overflow: hidden; }
+.photo.has-proCard { position: relative; overflow: visible; }
+.photo.has-proCard > img { display: block; }
 .proCard {
-  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 2;
+  position: relative; z-index: 2; margin: -54px auto 4px;
   width: min(380px, calc(100% - 28px)); padding: 16px 18px 14px; border-radius: 22px; text-align: center;
   display: grid; justify-items: center; gap: 5px; color: #fff;
   background: linear-gradient(180deg, rgba(13, 27, 40, .86), rgba(4, 13, 22, .94));
