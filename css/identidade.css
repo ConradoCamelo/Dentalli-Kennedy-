@@ -1,0 +1,197 @@
+/* Dentista Fortaleza (dentistasfortaleza.com): moderna e vibrante
+   índigo profundo + violeta elétrico, títulos geométricos e formas bem arredondadas */
+:root {
+  --id-head: "Sora", "DM Sans", system-ui, sans-serif;
+  --id-head-weight: 700;
+  --id-head-track: -0.025em;
+  --id-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --id-hand: "Sora", system-ui, sans-serif;
+  --id-radius: 26px;
+  --id-btn-radius: 999px;
+  --id-pill-radius: 999px;
+
+  --id-bg: #0e0b26;
+  --id-bg2: #141036;
+  --id-card: #1a1543;
+  --id-brand: #5b44e8;
+  --id-line: rgba(167, 150, 255, .16);
+  --id-accent: #a796ff;
+  --id-accent-soft: rgba(167, 150, 255, .14);
+  --id-accent-line: rgba(167, 150, 255, .5);
+  --id-topbar: #0a0820;
+  --id-header: rgba(14, 11, 38, .97);
+  --id-hero: radial-gradient(circle at 80% 25%, rgba(139, 112, 255, .32), transparent 38%), radial-gradient(circle at 10% 90%, rgba(255, 122, 89, .14), transparent 30%), linear-gradient(135deg, #0b0822 0%, #1a1350 55%, #241a6b 100%);
+  --id-hero-glow: radial-gradient(circle at 18% 30%, rgba(139, 112, 255, .2), transparent 32%);
+  --id-photo-glow: radial-gradient(circle, rgba(139, 112, 255, .38) 0, rgba(139, 112, 255, .12) 45%, transparent 72%);
+  --id-emergency: linear-gradient(135deg, #1a1547, #0e0b26);
+  --id-footer: #08061a;
+  --id-card-grad: linear-gradient(180deg, #211a55, #130f33);
+  --id-testimonials: radial-gradient(circle at 20% 0, rgba(255, 122, 89, .22), transparent 32%), linear-gradient(135deg, #3b28b8, #5b44e8 52%, #3a27a8);
+  --id-tcard: rgba(14, 11, 38, .32);
+  --id-callbar: linear-gradient(180deg, #6d55ff, #4b33d6);
+  --id-mini-ink: #4b33d6;
+
+  --id-l-primary: #5b44e8;
+  --id-l-soft: #eeebff;
+  --id-l-paper: #f8f7ff;
+  --id-l-ink: #15122b;
+
+  --id-u-red: #e8432e;
+  --id-u-red-dark: #8e1d10;
+  --id-u-soft: #fff0ec;
+  --id-u-soft2: #fff7f4;
+  --id-navbtn-bg: linear-gradient(135deg, #8f7bff, #5b44e8);
+  --id-navbtn-ink: #ffffff;
+  --id-radius-l: 30px;
+  --id-imp-gold: #ffc27a;
+  --id-p-main: #5b44e8;
+  --id-p-dark: #2f1f9c;
+  --id-p-soft: #eeebff;
+  --id-p-soft2: #f8f7ff;
+  --id-ads-navy: #1a1543;
+  --id-ads-navy2: #2a2170;
+  --id-ads-deep: #0e0b26;
+}
+/* ==========================================================
+   IDENTIDADE VISUAL PRÓPRIA DO SITE
+   Camada carregada por último em todas as páginas. Só muda o visual
+   (cores, fontes, formas). Nenhum texto, link ou rastreamento muda.
+   As cores e fontes de cada site ficam nas variáveis --id-* (topo).
+   ========================================================== */
+
+/* ---------- Página inicial (tema escuro) ---------- */
+:root {
+  --accent: var(--id-accent);
+  --dentalli-cyan: var(--id-accent);
+  --dentalli-bg: var(--id-bg);
+  --dentalli-card: var(--id-card);
+  --surface: var(--id-bg2);
+  --surface2: var(--id-card);
+  --card: var(--id-card);
+  --brand: var(--id-brand);
+  --heroBlue: var(--id-brand);
+  --radius: var(--id-radius);
+}
+
+body { font-family: var(--id-body); }
+h1, h2, h3, .slide__title, .sectionHead h2, .testimonials__title, .h2, .hero h1 {
+  font-family: var(--id-head) !important;
+  letter-spacing: var(--id-head-track);
+  font-weight: var(--id-head-weight);
+}
+
+body.home-id, body:has(.heroSplitDesktop), body:has(.hero__slider) { background: var(--id-bg); }
+.topbar { background: var(--id-topbar) !important; }
+body:has(.topbar) .header { background: var(--id-header) !important; }
+.nav__submenu, .mobileNav { background: var(--id-bg2) !important; }
+.nav__btn { border-color: var(--id-accent-line) !important; }
+.nav__btn:hover { border-color: var(--id-accent) !important; }
+.topbar__btn.call { background: var(--id-accent-soft) !important; border-color: var(--id-accent-line) !important; }
+
+.hero:has(.hero__slider),
+.hero.heroSplitDesktop { background: var(--id-hero) !important; }
+.slide::after { background: var(--id-hero-glow) !important; }
+.heroDoctorBox::before { background: var(--id-photo-glow) !important; }
+.slide__title span { color: var(--id-accent) !important; }
+
+.trustStrip, .section--continuo, .faq, .mapWrap, .faqSection { background: var(--id-bg) !important; }
+.trustItem { background: var(--id-card) !important; border-color: var(--id-line) !important; border-radius: var(--id-radius); }
+.trustItem strong, .faqItem summary::after, .blogCard h3, .blogMore { color: var(--id-accent) !important; }
+.emergency { background: var(--id-emergency) !important; }
+.faqItem, .card, .contactBox { background: var(--id-card) !important; border-color: var(--id-line) !important; }
+.footer { background: var(--id-footer) !important; }
+
+.actCard { background: var(--id-card-grad) !important; border-color: var(--id-line) !important; border-radius: var(--id-radius) !important; }
+.actCard:hover, .blogCard:hover, .card:hover, .fCard:hover { border-color: var(--id-accent-line) !important; }
+.actBtn { background: var(--id-accent-soft) !important; border-color: var(--id-accent-line) !important; color: var(--id-accent) !important; }
+.actCard:hover .actBtn { background: #25d366 !important; border-color: #25d366 !important; color: #06210f !important; }
+
+.testimonials { background: var(--id-testimonials) !important; }
+.tCard { background: var(--id-tcard) !important; }
+.callBar { background: var(--id-callbar) !important; }
+.fCard { border-radius: var(--id-radius) !important; }
+.doctorMiniCard strong, .doctorMiniCard span { color: var(--id-mini-ink) !important; }
+.doctorMiniCard { border-radius: var(--id-radius) !important; }
+
+/* ---------- Páginas claras (facetas, extração, clareamento, pediatria) ---------- */
+:root {
+  --primary: var(--id-l-primary);
+  --soft-blue: var(--id-l-soft);
+  --paper: var(--id-l-paper);
+  --ink: var(--id-l-ink);
+  --font: var(--id-body);
+  --hand: var(--id-hand);
+}
+.hl { color: var(--id-l-primary) !important; }
+.hl__line path { stroke: var(--id-l-primary) !important; }
+.docCard, .smileCard, .photo { border-color: var(--id-l-soft) !important; }
+.pill { border-radius: var(--id-pill-radius); }
+.btn { border-radius: var(--id-btn-radius); }
+
+/* ---------- Urgência e canal (tema vermelho) ---------- */
+.heroServices .svcIcon, .urgChip__ic { color: var(--id-u-red) !important; }
+body:has(.urgSituations), body:has(.showcase) {
+  --red: var(--id-u-red);
+  --redDark: var(--id-u-red-dark);
+  --redSoft: var(--id-u-soft);
+  --redSoft2: var(--id-u-soft2);
+}
+
+/* ---------- Ajustes finos ---------- */
+body:has(.topbar) .nav__btn { color: var(--id-navbtn-ink, var(--id-accent)) !important; background-image: var(--id-navbtn-bg) !important; }
+.hero.heroSplitDesktop::after { background: linear-gradient(180deg, transparent, var(--id-bg)) !important; }
+/* ---------- Implantes (página escura própria) ---------- */
+:root:has(link[href*="implantes.css"]) {
+  --bg: var(--id-bg);
+  --bg2: var(--id-bg2);
+  --cyan: var(--id-accent);
+  --gold: var(--id-imp-gold);
+}
+:root:has(link[href*="implantes.css"]) body { background: var(--id-bg); }
+
+/* ---------- Prótese (tema dourado claro) ---------- */
+:root:has(link[href*="protese.css"]) {
+  --gold: var(--id-p-main);
+  --goldDark: var(--id-p-dark);
+  --goldSoft: var(--id-p-soft);
+  --goldSoft2: var(--id-p-soft2);
+  --teal: var(--id-l-primary);
+  --ink: var(--id-l-ink);
+  --radius: var(--id-radius-l);
+}
+
+/* ---------- Canal (tema vermelho claro) ---------- */
+:root:has(link[href*="canal.css"]) {
+  --red: var(--id-u-red);
+  --redDark: var(--id-u-red-dark);
+  --redSoft: var(--id-u-soft);
+  --redSoft2: var(--id-u-soft2);
+  --radius: var(--id-radius-l);
+}
+
+/* ---------- Implantes Google Ads ---------- */
+:root:has(link[href*="implantes-ads.css"]) {
+  --navy: var(--id-ads-navy);
+  --navy2: var(--id-ads-navy2);
+  --navyDeep: var(--id-ads-deep);
+  --blue: var(--id-l-primary);
+  --serif: var(--id-head);
+}
+
+/* Prótese e canal: tons fixos que seguem a cor de cada site */
+:root:has(link[href*="protese.css"]) .hero h1,
+:root:has(link[href*="protese.css"]) .doctorName strong,
+:root:has(link[href*="protese.css"]) .doctorRating b,
+:root:has(link[href*="protese.css"]) .review b,
+:root:has(link[href*="canal.css"]) .hero h1,
+:root:has(link[href*="canal.css"]) .doctorName strong,
+:root:has(link[href*="canal.css"]) .doctorRating b,
+:root:has(link[href*="canal.css"]) .review b { color: var(--id-l-ink) !important; }
+:root:has(link[href*="protese.css"]) .hero {
+  background: radial-gradient(circle at 82% 16%, var(--id-l-soft), transparent 26%),
+              linear-gradient(135deg, var(--id-p-soft2) 0%, var(--id-p-soft) 55%, var(--id-l-paper) 100%) !important;
+}
+:root:has(link[href*="protese.css"]) .offerBox { background: linear-gradient(135deg, var(--id-l-ink), var(--goldDark)) !important; }
+:root:has(link[href*="protese.css"]) .finalCta { background: linear-gradient(135deg, var(--id-l-ink), var(--goldDark)) !important; }
+:root:has(link[href*="canal.css"]) .offerBox { background: linear-gradient(135deg, var(--id-l-ink), var(--redDark)) !important; }
+:root:has(link[href*="canal.css"]) .finalCta { background: linear-gradient(135deg, var(--id-l-ink), var(--redDark)) !important; }
