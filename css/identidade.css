@@ -1,5 +1,5 @@
 /* Dentista Fortaleza (dentistasfortaleza.com): moderna e vibrante
-   índigo profundo + violeta elétrico, títulos geométricos e formas bem arredondadas */
+   azul royal profundo + amarelo-sol, títulos geométricos e formas bem arredondadas */
 :root {
   --id-head: "Sora", "DM Sans", system-ui, sans-serif;
   --id-head-weight: 700;
@@ -10,47 +10,47 @@
   --id-btn-radius: 999px;
   --id-pill-radius: 999px;
 
-  --id-bg: #0e0b26;
-  --id-bg2: #141036;
-  --id-card: #1a1543;
-  --id-brand: #5b44e8;
-  --id-line: rgba(167, 150, 255, .16);
-  --id-accent: #a796ff;
-  --id-accent-soft: rgba(167, 150, 255, .14);
-  --id-accent-line: rgba(167, 150, 255, .5);
-  --id-topbar: #0a0820;
-  --id-header: rgba(14, 11, 38, .97);
-  --id-hero: radial-gradient(circle at 80% 25%, rgba(139, 112, 255, .32), transparent 38%), radial-gradient(circle at 10% 90%, rgba(255, 122, 89, .14), transparent 30%), linear-gradient(135deg, #0b0822 0%, #1a1350 55%, #241a6b 100%);
-  --id-hero-glow: radial-gradient(circle at 18% 30%, rgba(139, 112, 255, .2), transparent 32%);
-  --id-photo-glow: radial-gradient(circle, rgba(139, 112, 255, .38) 0, rgba(139, 112, 255, .12) 45%, transparent 72%);
-  --id-emergency: linear-gradient(135deg, #1a1547, #0e0b26);
-  --id-footer: #08061a;
-  --id-card-grad: linear-gradient(180deg, #211a55, #130f33);
-  --id-testimonials: radial-gradient(circle at 20% 0, rgba(255, 122, 89, .22), transparent 32%), linear-gradient(135deg, #3b28b8, #5b44e8 52%, #3a27a8);
-  --id-tcard: rgba(14, 11, 38, .32);
-  --id-callbar: linear-gradient(180deg, #6d55ff, #4b33d6);
-  --id-mini-ink: #4b33d6;
+  --id-bg: #06123a;
+  --id-bg2: #0a1a4c;
+  --id-card: #0f2460;
+  --id-brand: #2f5bff;
+  --id-line: rgba(255, 212, 71, .16);
+  --id-accent: #ffd447;
+  --id-accent-soft: rgba(255, 212, 71, .13);
+  --id-accent-line: rgba(255, 212, 71, .5);
+  --id-topbar: #040c2a;
+  --id-header: rgba(6, 18, 58, .97);
+  --id-hero: radial-gradient(circle at 80% 25%, rgba(47, 91, 255, .42), transparent 40%), radial-gradient(circle at 10% 90%, rgba(255, 212, 71, .12), transparent 30%), linear-gradient(135deg, #040c2a 0%, #0b1f63 55%, #1436a0 100%);
+  --id-hero-glow: radial-gradient(circle at 18% 30%, rgba(47, 91, 255, .22), transparent 32%);
+  --id-photo-glow: radial-gradient(circle, rgba(255, 212, 71, .30) 0, rgba(47, 91, 255, .14) 45%, transparent 72%);
+  --id-emergency: linear-gradient(135deg, #0f2460, #06123a);
+  --id-footer: linear-gradient(180deg, #0f2460 0%, #081843 100%);
+  --id-card-grad: linear-gradient(180deg, #132b70, #0a1a4c);
+  --id-testimonials: radial-gradient(circle at 20% 0, rgba(255, 212, 71, .20), transparent 32%), linear-gradient(135deg, #1a3fd0, #2f5bff 52%, #1a3cc0);
+  --id-tcard: rgba(4, 12, 42, .30);
+  --id-callbar: linear-gradient(180deg, #2f5bff, #1a3cc0);
+  --id-mini-ink: #1a3cc0;
 
-  --id-l-primary: #5b44e8;
-  --id-l-soft: #eeebff;
-  --id-l-paper: #f8f7ff;
-  --id-l-ink: #15122b;
+  --id-l-primary: #1f47d6;
+  --id-l-soft: #e8eeff;
+  --id-l-paper: #f7f9ff;
+  --id-l-ink: #0d1433;
 
   --id-u-red: #e8432e;
   --id-u-red-dark: #8e1d10;
   --id-u-soft: #fff0ec;
   --id-u-soft2: #fff7f4;
-  --id-navbtn-bg: linear-gradient(135deg, #8f7bff, #5b44e8);
-  --id-navbtn-ink: #ffffff;
+  --id-navbtn-bg: linear-gradient(135deg, #ffe07a, #ffc61a);
+  --id-navbtn-ink: #1a1400;
   --id-radius-l: 30px;
-  --id-imp-gold: #ffc27a;
-  --id-p-main: #5b44e8;
-  --id-p-dark: #2f1f9c;
-  --id-p-soft: #eeebff;
-  --id-p-soft2: #f8f7ff;
-  --id-ads-navy: #1a1543;
-  --id-ads-navy2: #2a2170;
-  --id-ads-deep: #0e0b26;
+  --id-imp-gold: #ffd447;
+  --id-p-main: #1f47d6;
+  --id-p-dark: #0f2a8a;
+  --id-p-soft: #e8eeff;
+  --id-p-soft2: #f7f9ff;
+  --id-ads-navy: #0f2460;
+  --id-ads-navy2: #1a3cc0;
+  --id-ads-deep: #06123a;
 }
 /* ==========================================================
    IDENTIDADE VISUAL PRÓPRIA DO SITE
@@ -99,7 +99,10 @@ body:has(.topbar) .header { background: var(--id-header) !important; }
 .trustItem strong, .faqItem summary::after, .blogCard h3, .blogMore { color: var(--id-accent) !important; }
 .emergency { background: var(--id-emergency) !important; }
 .faqItem, .card, .contactBox { background: var(--id-card) !important; border-color: var(--id-line) !important; }
-.footer { background: var(--id-footer) !important; }
+body:has(.topbar) .footer { background: var(--id-footer) !important; border-top: 1px solid var(--id-line); }
+body:has(.topbar) .footer, body:has(.topbar) .footer p, body:has(.topbar) .footer a, body:has(.topbar) .footer span { color: rgba(255, 255, 255, .88) !important; opacity: 1 !important; }
+body:has(.topbar) .footer a:hover { color: var(--id-accent) !important; }
+.unitFooter { background: var(--id-footer) !important; }
 
 .actCard { background: var(--id-card-grad) !important; border-color: var(--id-line) !important; border-radius: var(--id-radius) !important; }
 .actCard:hover, .blogCard:hover, .card:hover, .fCard:hover { border-color: var(--id-accent-line) !important; }
