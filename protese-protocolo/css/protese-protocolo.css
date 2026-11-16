@@ -1,0 +1,140 @@
+/* ==========================================================
+   Prótese Protocolo — ajustes próprios da página.
+   O visual base vem de ../implantes/css/implantes.css.
+   ========================================================== */
+
+/* Hero: linha de parcelamento dentro do selo de oferta */
+.ppHero__parc {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Texto simples das seções informativas */
+.ppText {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ppText p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+/* Como funciona: 4 etapas */
+.ppProcessHead {
+  margin-bottom: 22px;
+}
+
+@media (min-width: 981px) {
+  .ppSteps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Vantagens: mantém os cards visíveis também no celular */
+@media (max-width: 768px) {
+  .ppWhy .whyCards {
+    display: grid;
+  }
+}
+
+/* Oferta: linhas de pagamento */
+.priceHighlight .ppPriceLine {
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+/* FAQ em largura única */
+.ppFaq {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ppFaq h2 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.1;
+  margin: 12px 0 8px;
+}
+
+/* Unidade: endereço, dentista e mapa */
+.ppUnitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.ppUnitInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ppUnitInfo .unitCard {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.ppDoctor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .035);
+}
+
+.ppDoctor img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+.ppDoctor strong {
+  display: block;
+  font-size: 18px;
+}
+
+.ppDoctor span,
+.ppDoctor small {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.ppMap {
+  position: relative;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #071522;
+}
+
+.ppMap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .ppUnitGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ppMap {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}

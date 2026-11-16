@@ -94,6 +94,15 @@ const WA_MESSAGES = {
   wppBarraImplantesAds: "Olá! Vi o site da Dentalli e quero agendar uma avaliação para implante dentário.",
   wppObrigadoImplantesAds: "Olá! Meu nome é {{nome}}. Acabei de preencher o formulário no site.\n\nInteresse: {{interesse}}\n\nQuero agendar minha avaliação.",
 
+  // ================= PRÓTESE PROTOCOLO (/protese-protocolo/) =================
+  wppHeroProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppIndicacaoProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppVantagensProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppGaleriaProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppOfertaProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppFinalProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+  wppFlutuanteProteseProtocolo: "Olá! Vi a página de prótese protocolo e quero agendar uma avaliação.",
+
   // ================= PRÓTESE (/protese/) =================
   wppHeroProtese: "Olá! Vim pela página de Prótese Dentária da Dentalli e quero agendar uma avaliação.",
   wppIndicacaoCtaProtese: "Olá! Vim pela página de Prótese Dentária da Dentalli e quero agendar uma avaliação.",
