@@ -2244,3 +2244,21 @@ img,video {
     padding: 34px 22px;
   }
 }
+/* Vídeo do caso real: no computador mostra a capa vertical inteira (antes e depois), como no celular */
+@media (min-width:981px) {
+    .videoIntroGrid {
+        grid-template-columns:1fr 1fr
+    }
+    .videoFeature {
+        width:340px;
+        justify-self:center
+    }
+    .videoFeature video {
+        display:block;
+        height:auto;
+        aspect-ratio:9/16
+    }
+    .videoBadges {
+        grid-template-columns:1fr 1fr
+    }
+}
